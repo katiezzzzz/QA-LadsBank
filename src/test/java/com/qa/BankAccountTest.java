@@ -5,6 +5,7 @@ import com.qa.exceptions.NotEnoughBalanceException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BankAccountTest {
 
@@ -75,11 +76,13 @@ class BankAccountTest {
         double minBalance = 20 ;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(balance, minBalance, name);
+        final BankAccount testAccount = new BankAccount(balance, minBalance, name);
 
-        double withdrawAmount = -10;
+        final double withdrawAmount = -10;
 
-        String actualMessage = testAccount.withdraw(withdrawAmount);
+        assertThrows(InvalidWithdrawException.class, () -> testAccount.withdraw(withdrawAmount));
+
+//        String actualMessage = testAccount.withdraw(withdrawAmount);
 
 //        assertEquals("Sorry, the amount you are withdrawing is invalid", actualMessage);
 
