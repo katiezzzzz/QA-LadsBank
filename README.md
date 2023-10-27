@@ -4,6 +4,9 @@
 *Features:*
 Current and Savings Account - Withdraw(), Deposit() Methods;
 
+How to Use:
+Create a bank account (savings or current) with ladsbank, choose to withdraw or deposit into these accounts, have interest rates effect the savings account and minimum balanace
+
 | Classes              | Type           |      Inheritence     |
 | ---------------------|----------------| ---------------------|
 | App                  | Static Class   |        N/A           |
@@ -12,15 +15,15 @@ Current and Savings Account - Withdraw(), Deposit() Methods;
 | Savings Bank Account | Class          | Extends Bank Account |
 
 *Tests*
-| Tests Name           | Purpose        |      Dependencies     |
-| ---------------------|----------------| ---------------------|
-| N/A                    | N/A      |        N/A           |
-| N/A            | N/A    |        N/A           |
-| N/A     | N/A            | N/A   |
-| N/A     | N/A            | N/A   |
-
-How to Use:
-Create a bank account (savings or current) with ladsbank, choose to withdraw or deposit.
-
+| Tests Name                                | Outcome |
+| ------------------------------------------|---------|
+| Add new account balance                   | Success |                     | Add account minimum balanace              | Success |
+| Add new account name                      | Success |
+| Successful Withdraw                       | Success |
+| Unsucessful Withdraw - invalid            | Error   |
+| Unsucessful Withdraw - Not enough balanace| Error   |
+| Sucessful Deposit                         | Success |
+| Unsucessful Deposit                       | Error   |
+| ------------------------------------------|---------|
 
 License: None
