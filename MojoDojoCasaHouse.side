@@ -1,0 +1,102 @@
+{
+  "id": "bab5f194-466e-4651-9c9a-9285a0ce3fd5",
+  "version": "2.0",
+  "name": "MojoDojoCasaHouse",
+  "url": "https://en.wikipedia.org",
+  "tests": [{
+    "id": "f8100967-89d9-4dd0-81a4-547d10460c02",
+    "name": "MojoDojoTest",
+    "commands": [{
+      "id": "98693e42-71ac-4382-a2d1-86ffd83152af",
+      "comment": "",
+      "command": "open",
+      "target": "/wiki/Barbie_(film)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3fe534c-3e75-4e61-bcc7-753d11d02c0a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdae1d80-58c1-494d-8cc0-82160f5fbd2f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=fantasy comedy",
+      "targets": [
+        ["linkText=fantasy comedy", "linkText"],
+        ["css=p:nth-child(7) > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'fantasy comedy')]", "xpath:link"],
+        ["xpath=//div[@id='mw-content-text']/div/p[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/wiki/Fantasy_comedy')]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'fantasy comedy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "839747ce-4496-41f3-bf90-2e28237dedf7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=[2]",
+      "targets": [
+        ["linkText=[2]", "linkText"],
+        ["css=#cite_ref-2 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'[2]')]", "xpath:link"],
+        ["xpath=//sup[@id='cite_ref-2']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#cite_note-2')]", "xpath:href"],
+        ["xpath=//li/sup/a", "xpath:position"],
+        ["xpath=//a[contains(.,'[2]')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b93d6f98-912d-4a74-a093-5a58af52936e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=[2]",
+      "targets": [
+        ["linkText=[2]", "linkText"],
+        ["css=#cite_ref-2 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'[2]')]", "xpath:link"],
+        ["xpath=//sup[@id='cite_ref-2']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#cite_note-2')]", "xpath:href"],
+        ["xpath=//li/sup/a", "xpath:position"],
+        ["xpath=//a[contains(.,'[2]')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b09d4a79-5e23-408d-bf10-e802956954ed",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=[2]",
+      "targets": [
+        ["linkText=[2]", "linkText"],
+        ["css=#cite_ref-2 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'[2]')]", "xpath:link"],
+        ["xpath=//sup[@id='cite_ref-2']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#cite_note-2')]", "xpath:href"],
+        ["xpath=//li/sup/a", "xpath:position"],
+        ["xpath=//a[contains(.,'[2]')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a28acea1-223d-40ae-8c15-1c30b61918a2",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Fantasy comedy - Wikipedia",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5f176896-6292-4cc4-ac47-cb37f73c044a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f8100967-89d9-4dd0-81a4-547d10460c02"]
+  }],
+  "urls": ["https://en.wikipedia.org/"],
+  "plugins": []
+}
