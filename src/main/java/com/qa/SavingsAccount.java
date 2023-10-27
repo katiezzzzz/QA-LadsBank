@@ -26,7 +26,7 @@ public class SavingsAccount extends BankAccount {
     @Override
     public String withdraw(double withdrawAmount) throws InvalidAmountException {
         double currentBalance = this.getBalance();
-        if (withdrawAmount <= 0 || withdrawAmount > this.getMaxWithdrawAmount())
+        if (withdrawAmount <= 0 || withdrawAmount > (this.getBalance() - this.getMinimumBalance()))
             throw new InvalidAmountException("Sorry, the amount you are withdrawing is invalid");
         this.setBalance(currentBalance - withdrawAmount);
         return "Withdraw successful";

@@ -15,7 +15,9 @@ public class App
         CurrentAccount testAccount = new CurrentAccount(balance, minBalance, name);
 
         try {
-
+            System.out.println(testAccount.getBalance());
+            System.out.println(testAccount.getMinimumBalance());
+            System.out.println(testAccount.getBalance() - testAccount.getMinimumBalance());
             System.out.println(testAccount.getMaxWithdrawAmount());
             System.out.println(testAccount.withdraw(40.30));
         }
