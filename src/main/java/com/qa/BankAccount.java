@@ -55,6 +55,7 @@ public abstract class BankAccount {
     public String deposit(double depositAmount) throws InvalidAmountException {
         if (depositAmount <= 0)
             throw new InvalidAmountException("Sorry, the amount you are withdrawing is invalid");
+        this.setBalance(depositAmount + this.getBalance());
         return "Deposit Successful!";
     }
 

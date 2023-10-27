@@ -12,14 +12,40 @@ public class App
         withdrawCurrent();
         System.out.println("========================================");
         withdrawSavings();
+        System.out.println("========================================");
+        depositSavings();
+    }
+
+    private static void depositSavings() {
+        double balance = 800;
+        double minBalance = 0;
+        String name = "Ron Weasley";
+        SavingsAccount myAccount = new SavingsAccount(balance, minBalance, name);
+        System.out.println(String.format("%s's current balance: %.2f",
+                myAccount.getAccountHolderName(), myAccount.getBalance()));
+        try {
+            System.out.println(myAccount.deposit(1000));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println(String.format("%s's new balance: %.2f",
+                myAccount.getAccountHolderName(), myAccount.getBalance()));
+
+        try {
+            System.out.println(myAccount.deposit(-3));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void withdrawSavings() {
-        double expectedBalance = 500;
+        double balance = 500;
         double minBalance = 0;
         String name = "Hermione Granger";
 
-        SavingsAccount myAccount = new SavingsAccount(expectedBalance, minBalance, name);
+        SavingsAccount myAccount = new SavingsAccount(balance, minBalance, name);
         System.out.println(String.format("%s's current balance: %.2f",
                 myAccount.getAccountHolderName(), myAccount.getBalance()));
         try {
@@ -40,11 +66,11 @@ public class App
     }
 
     private static void withdrawCurrent() {
-        double expectedBalance = 1000;
+        double balance = 1000;
         double minBalance = 0;
         String name = "Harry Potter";
 
-        CurrentAccount myAccount = new CurrentAccount(expectedBalance, minBalance, name);
+        CurrentAccount myAccount = new CurrentAccount(balance, minBalance, name);
         System.out.println(String.format("%s's current balance: %.2f",
                 myAccount.getAccountHolderName(), myAccount.getBalance()));
         try {

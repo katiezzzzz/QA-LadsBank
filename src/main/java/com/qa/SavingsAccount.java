@@ -35,14 +35,9 @@ public class SavingsAccount extends BankAccount {
             throw new InvalidAmountException("Sorry, the amount you are withdrawing is invalid");
         this.setBalance(currentBalance - withdrawAmount);
         double originalInterestRate = this.getInterestRate();
+//        decrease interest rate by 50% if withdraw over amount
         this.setInterestRate(0.5 * originalInterestRate);
         return String.format("Withdraw successful and your interest rate has gone down from %.2f", originalInterestRate)
                 + "%" + String.format(" to %.2f", this.getInterestRate()) + "%";
     }
-
-//    interest rate
-
-//    decrease rate by 50% if withdraw over amount
-
-//    no maximum withdraw
 }

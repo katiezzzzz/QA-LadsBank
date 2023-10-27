@@ -37,6 +37,5 @@ public class SavingsAccountTest {
 
         assertEquals(expectedInterestRate, actualInterestRate);
     }
-
-
+    
 }
