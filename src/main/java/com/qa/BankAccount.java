@@ -12,11 +12,10 @@ public abstract class BankAccount {
         this.accountHolderName = accountHolderName;
     }
 
-    double balance;
-    double minimumBalance;
-    String accountHolderName;
-
-
+    private double balance;
+    private double minimumBalance;
+    private String accountHolderName;
+    private double maxWithdrawAmount = this.getBalance() - this.getMinimumBalance();
 
     public double getBalance() {
         return balance;
@@ -38,8 +37,6 @@ public abstract class BankAccount {
     public void setAccountHolderName(String accountHolderName) {
         this.accountHolderName = accountHolderName;
     }
-
-    double maxWithdrawAmount = this.getBalance() - this.getMinimumBalance();
 
     public double getMaxWithdrawAmount() {
         return maxWithdrawAmount;
