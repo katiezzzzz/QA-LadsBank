@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class BankAccountTest {
+class CurrentAccountTest {
 
 //    TEST BELOW IS FINISHED AND WORKING CORRECTLY
     @Test
@@ -19,7 +19,7 @@ class BankAccountTest {
         double minBalance = 2.50;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(expectedBalance, minBalance, name);
+        CurrentAccount testAccount = new CurrentAccount(expectedBalance, minBalance, name);
 
         double actualBalance = testAccount.getBalance();
 
@@ -35,7 +35,7 @@ class BankAccountTest {
         double expectedMinBalance = 2.50;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(balance, expectedMinBalance, name);
+        CurrentAccount testAccount = new CurrentAccount(balance, expectedMinBalance, name);
 
         double actualMinBalance= testAccount.getMinimumBalance();
 
@@ -51,7 +51,7 @@ class BankAccountTest {
             double minBalance = 2.50;
             String expectedAccountName = "Harry Potter";
 
-            BankAccount testAccount = new BankAccount(balance, minBalance, expectedAccountName);
+            CurrentAccount testAccount = new CurrentAccount(balance, minBalance, expectedAccountName);
 
             String actualName = testAccount.getAccountHolderName();
 
@@ -67,7 +67,7 @@ class BankAccountTest {
         double minBalance = 2.50;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(balance, minBalance, name);
+        CurrentAccount testAccount = new CurrentAccount(balance, minBalance, name);
 
         String actualMessage = testAccount.withdraw(40.30);
 
@@ -81,7 +81,7 @@ class BankAccountTest {
         double minBalance = 20 ;
         String name = "Harry Potter";
 
-        final BankAccount testAccount = new BankAccount(balance, minBalance, name);
+        final CurrentAccount testAccount = new CurrentAccount(balance, minBalance, name);
 
         final double withdrawAmount = -10;
 
@@ -98,7 +98,7 @@ class BankAccountTest {
         double minBalance = 20;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(balance, minBalance, name);
+        CurrentAccount testAccount = new CurrentAccount(balance, minBalance, name);
 
 
         assertThrows(NotEnoughBalanceException.class, () -> testAccount.withdraw(40));
@@ -112,7 +112,7 @@ class BankAccountTest {
         double minBalance = 20;
         String name = "Harry Potter";
 
-        BankAccount testAccount = new BankAccount(balance, minBalance, name);
+        CurrentAccount testAccount = new CurrentAccount(balance, minBalance, name);
 
         double depositAmount = 10;
         String actualMessage = testAccount.deposit(depositAmount);
