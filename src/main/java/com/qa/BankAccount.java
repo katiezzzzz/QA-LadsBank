@@ -7,8 +7,8 @@ public abstract class BankAccount {
         this(0, 0, "Unknown");
     }
     public BankAccount(double balance, double minimumBalance, String accountHolderName) {
-        this.balance = balance;
-        this.minimumBalance = minimumBalance;
+        this.setBalance(balance);
+        this.setMinimumBalance(minimumBalance);
         this.accountHolderName = accountHolderName;
     }
 
@@ -21,14 +21,19 @@ public abstract class BankAccount {
         return balance;
     }
     public void setBalance(double balance) {
-        this.balance = balance;
+        if (balance >= 0){
+            this.balance = balance;
+        }
+
     }
 
     public double getMinimumBalance() {
         return minimumBalance;
     }
     public void setMinimumBalance(double minimumBalance) {
-        this.minimumBalance = minimumBalance;
+        if (minimumBalance >= 0){
+            this.minimumBalance = minimumBalance;
+        }
     }
 
     public String getAccountHolderName() {
