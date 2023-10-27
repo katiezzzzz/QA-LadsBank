@@ -100,6 +100,24 @@ class BankAccountTest {
 
         BankAccount testAccount = new BankAccount(balance, minBalance, name);
 
+
         assertThrows(NotEnoughBalanceException.class, () -> testAccount.withdraw(40));
+    }
+
+    @Test
+    @DisplayName("Successful Deposit")
+    public void successful_deposit_positive_value(){
+
+        double balance = 20;
+        double minBalance = 20;
+        String name = "Harry Potter";
+
+        BankAccount testDeposit = new BankAccount(balance, minBalance, name);
+        double depositAmount = 10;
+        String actualMessage = BankAccount.deposit(depositAmount);
+        String expectedMessage = "Deposit Successful!";
+        assertEquals(expectedMessage, actualMessage);
+
+
     }
 }

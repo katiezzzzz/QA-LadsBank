@@ -19,6 +19,8 @@ public class BankAccount {
     double minimumBalance;
     String accountHolderName;
 
+
+
     public double getBalance() {
         return balance;
     }
@@ -48,5 +50,8 @@ public class BankAccount {
             throw new NotEnoughBalanceException(String.format("Sorry, you don't have enough money in your account and your current balance is: %.2f", this.getBalance()));
         this.setBalance(currentBalance - amount);
         return "Withdraw successful";
+    }
+    public static String deposit(double depositAmount) throws InvalidWithdrawException {
+        return "Deposit Successful!";
     }
 }
