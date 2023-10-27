@@ -35,7 +35,7 @@ public class App
             System.out.println(myAccount.withdraw(-3));
         }
         catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
@@ -60,7 +60,7 @@ public class App
             System.out.println(myAccount.withdraw(-3));
         }
         catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 }
