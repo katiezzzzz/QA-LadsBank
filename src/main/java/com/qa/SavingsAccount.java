@@ -4,13 +4,16 @@ import com.qa.exceptions.InvalidAmountException;
 
 public class SavingsAccount extends BankAccount {
 //    constructor calls parent
+    public SavingsAccount(double balance, double minimumBalance, String accountHolderName) {
+        this(balance, minimumBalance, accountHolderName, 2);
+    }
     public SavingsAccount(double balance, double minimumBalance, String accountHolderName, double interestRate) {
         super(balance, minimumBalance, accountHolderName);
-        this.interestRate = interestRate;
+        this.setInterestRate(interestRate);
     }
 
 //    create interest rate
-    private double interestRate = 3;
+    private double interestRate;
 
 //    getter interest rate
     public double getInterestRate() {
@@ -19,7 +22,9 @@ public class SavingsAccount extends BankAccount {
 
 //    setter interest rate
     public void setInterestRate(double interestRate) {
-        this.interestRate = interestRate;
+        if (interestRate >= 0) {
+            this.interestRate = interestRate;
+        }
     }
 
 //    withdraw abstract method overriden
@@ -29,7 +34,10 @@ public class SavingsAccount extends BankAccount {
         if (withdrawAmount <= 0 || withdrawAmount > (this.getBalance() - this.getMinimumBalance()))
             throw new InvalidAmountException("Sorry, the amount you are withdrawing is invalid");
         this.setBalance(currentBalance - withdrawAmount);
-        return "Withdraw successful";
+        double originalInterestRate = this.getInterestRate();
+        this.setInterestRate(0.5 * originalInterestRate);
+        return String.format("Withdraw successful and your interest rate has gone down from %.2f", originalInterestRate)
+                + "%" + String.format(" to %.2f", this.getInterestRate()) + "%";
     }
 
 //    interest rate
