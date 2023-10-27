@@ -1,0 +1,63 @@
+{
+  "id": "50d99292-9f9e-4887-acde-c6b8e388b2c2",
+  "version": "2.0",
+  "name": "TheLads.com",
+  "url": "https://example.com",
+  "tests": [{
+    "id": "e05d8795-7113-4f11-840e-38d085926de7",
+    "name": "TheLads",
+    "commands": [{
+      "id": "8585b0fe-2847-4664-8774-cf27e35b5f18",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c02feaa7-4088-4676-b906-af50b6b31f64",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1170x520",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73f44610-a16e-406c-a7c9-82825022273b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=More information...",
+      "targets": [
+        ["linkText=More information...", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'More information...')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://www.iana.org/domains/example')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'More information...')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3ea023a-9df8-48f6-a4bd-46b2b03a3385",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Example Domains",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b4b3a2d-4f78-4efe-bfc1-6d104b5fd6d4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(3)",
+      "targets": [],
+      "value": "We provide a web service on the example domain hosts to provide basic information on the purpose of the domain. These web services are provided as best effort, but are not designed to support production applications. While incidental traffic for incorrectly configured applications is expected, please do not design applications that require the example domains to have operating HTTP service."
+    }]
+  }],
+  "suites": [{
+    "id": "1f05e3d8-12c1-4f3a-be68-5dbdb9c1620a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e05d8795-7113-4f11-840e-38d085926de7"]
+  }],
+  "urls": ["https://example.com/"],
+  "plugins": []
+}

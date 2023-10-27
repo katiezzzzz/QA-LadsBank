@@ -1,0 +1,75 @@
+{
+  "id": "7ee0d0b9-4b4b-464a-aaeb-337e4252a4fc",
+  "version": "2.0",
+  "name": "Chad",
+  "url": "https://en.wikipedia.org/wiki/Chad",
+  "tests": [{
+    "id": "52021178-b8be-4bd6-9eb1-2795888c4494",
+    "name": "ChadTest",
+    "commands": [{
+      "id": "f94df7ec-78db-4376-8222-47a63bc05324",
+      "comment": "",
+      "command": "open",
+      "target": "https://en.wikipedia.org/wiki/Chad",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9f91aa1-88f1-42b4-929b-c8581ce92bba",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8da94888-eed8-4382-9311-8ebf6a41d2e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#toc-History > .vector-toc-link > .vector-toc-text",
+      "targets": [
+        ["css=#toc-History > .vector-toc-link > .vector-toc-text", "css:finder"],
+        ["xpath=//li[@id='toc-History']/a/div", "xpath:idRelative"],
+        ["xpath=//li[2]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cef83b0d-425b-45a7-880c-a15cb7f423df",
+      "comment": "",
+      "command": "click",
+      "target": "css=#toc-Demographics > .vector-toc-link > .vector-toc-text",
+      "targets": [
+        ["css=#toc-Demographics > .vector-toc-link > .vector-toc-text", "css:finder"],
+        ["xpath=//li[@id='toc-Demographics']/a/div", "xpath:idRelative"],
+        ["xpath=//div/ul/li[4]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30e2f6db-6dbe-4af9-b189-25374de1e05f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#toc-Languages .vector-toc-text",
+      "targets": [
+        ["css=#toc-Languages .vector-toc-text", "css:finder"],
+        ["xpath=//li[@id='toc-Languages']/a/div", "xpath:idRelative"],
+        ["xpath=//li[4]/ul/li[3]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f916dbe4-dfd7-4738-b33d-e689cc7bfa72",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Chad - Wikipedia",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f8241c68-5189-4fa2-98a9-e50cae164406",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["52021178-b8be-4bd6-9eb1-2795888c4494"]
+  }],
+  "urls": ["https://en.wikipedia.org/", "https://en.wikipedia.org/wiki/Chad"],
+  "plugins": []
+}
