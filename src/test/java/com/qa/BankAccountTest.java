@@ -1,6 +1,6 @@
 package com.qa;
 
-import com.qa.exceptions.InvalidWithdrawException;
+import com.qa.exceptions.InvalidAmountException;
 import com.qa.exceptions.NotEnoughBalanceException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -61,7 +61,7 @@ class BankAccountTest {
 //        TEST BELOW IS FINISHED AND RUNS CORRECTLY
     @Test
     @DisplayName("Successful withdraw")
-    public void successful_withdraw_amount_results_in_less_money() throws InvalidWithdrawException, NotEnoughBalanceException {
+    public void successful_withdraw_amount_results_in_less_money() throws InvalidAmountException, NotEnoughBalanceException {
 
         double balance = 100.30;
         double minBalance = 2.50;
@@ -76,7 +76,7 @@ class BankAccountTest {
 
     @Test
     @DisplayName("Unsuccessful withdraw - invalid withdraw amount")
-    public void unsuccessful_withdraw_invalid_negative_withdraw_amount_results_in_same_balance() throws InvalidWithdrawException, NotEnoughBalanceException {
+    public void unsuccessful_withdraw_invalid_negative_withdraw_amount_results_in_same_balance() throws InvalidAmountException, NotEnoughBalanceException {
         double balance = 100.30;
         double minBalance = 20 ;
         String name = "Harry Potter";
@@ -85,14 +85,14 @@ class BankAccountTest {
 
         final double withdrawAmount = -10;
 
-        assertThrows(InvalidWithdrawException.class, () -> testAccount.withdraw(withdrawAmount));
+        assertThrows(InvalidAmountException.class, () -> testAccount.withdraw(withdrawAmount));
 
     }
 
 
     @Test
     @DisplayName("Unsuccessful withdraw - not enough balance")
-    public void unsuccessful_withdraw_not_enough_balance_results_in_same_balance() throws InvalidWithdrawException, NotEnoughBalanceException {
+    public void unsuccessful_withdraw_not_enough_balance_results_in_same_balance() throws InvalidAmountException, NotEnoughBalanceException {
 
         double balance = 20;
         double minBalance = 20;
@@ -106,18 +106,18 @@ class BankAccountTest {
 
     @Test
     @DisplayName("Successful Deposit")
-    public void successful_deposit_positive_value(){
+    public void successful_deposit_positive_value() throws InvalidAmountException {
 
         double balance = 20;
         double minBalance = 20;
         String name = "Harry Potter";
 
-        BankAccount testDeposit = new BankAccount(balance, minBalance, name);
+        BankAccount testAccount = new BankAccount(balance, minBalance, name);
+
         double depositAmount = 10;
-        String actualMessage = BankAccount.deposit(depositAmount);
+        String actualMessage = testAccount.deposit(depositAmount);
         String expectedMessage = "Deposit Successful!";
+
         assertEquals(expectedMessage, actualMessage);
-
-
     }
 }
