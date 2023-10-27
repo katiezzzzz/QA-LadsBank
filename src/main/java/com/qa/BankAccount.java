@@ -1,9 +1,6 @@
 package com.qa;
 
 import com.qa.exceptions.InvalidAmountException;
-import com.qa.exceptions.NotEnoughBalanceException;
-
-import java.io.NotActiveException;
 
 public abstract class BankAccount {
     public BankAccount() {
@@ -42,11 +39,22 @@ public abstract class BankAccount {
         this.accountHolderName = accountHolderName;
     }
 
-    public abstract String withdraw(double withdrawAmount) throws NotEnoughBalanceException, InvalidAmountException;
+    double maxWithdrawAmount = this.getBalance() - this.getMinimumBalance();
+
+    public double getMaxWithdrawAmount() {
+        return maxWithdrawAmount;
+    }
+    public void setMaxWithdrawAmount(double maxWithdrawAmount) {
+        this.maxWithdrawAmount = maxWithdrawAmount;
+    }
+
+    public abstract String withdraw(double withdrawAmount) throws InvalidAmountException;
 
     public String deposit(double depositAmount) throws InvalidAmountException {
         if (depositAmount <= 0)
             throw new InvalidAmountException("Sorry, the amount you are withdrawing is invalid");
         return "Deposit Successful!";
     }
+
+
 }
